@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stox</title>
+    <link rel="icon" type="image/png" href="~/images/x.png" />
+    <link rel="stylesheet" href="~/tailwind.css" />
+</head>
+<body class="bg-[#0B0B0B] text-gray-100 min-h-screen flex flex-col">
+
+    <nav class="bg-[#1F1F1F] px-6 py-4 flex justify-between items-center shadow-md border-b border-gray-700">
+        <a class="flex items-center" asp-area="" asp-controller="Stocks" asp-action="Index">
+            <img src="~/images/logo.png" alt="Logo" class="h-5">
+        </a>
+    </nav>
+
+    <main class="flex-1 container mx-auto px-6 py-6">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-[#1F1F1F] text-gray-400 text-center py-4 mt-auto border-t border-gray-700">
+        &copy; 2025 Stox. All rights reserved.
+    </footer>
+</body>
+</html>
