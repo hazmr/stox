@@ -9,43 +9,24 @@
 </head>
 <body class="bg-[#0B0B0B] text-gray-100 min-h-screen flex flex-col">
 
-<nav class="bg-[#1F1F1F] shadow-md border-b border-gray-700">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <nav class="bg-[#1F1F1F] shadow-md border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="flex items-center" asp-area="" asp-controller="Stocks" asp-action="Index">
+                <img src="~/images/logo.png" alt="Logo" class="h-5 mr-2"/>
+            </a>
 
-        <!-- Logo -->
-        <a class="flex items-center" asp-area="" asp-controller="Stocks" asp-action="Index">
-            <img src="~/images/logo.png" alt="Logo" class="h-5">
-        </a>
-
-        <div class="flex items-center gap-4">
-
-            <div class="relative w-52">
-                <input 
-                    type="text" 
-                    placeholder="Search..."
-                    class="w-full bg-[#0F0F0F] border border-gray-700 rounded-lg px-4 py-2 text-gray-200
-                           focus:outline-none focus:ring-1 focus:ring-gray-500 placeholder-gray-500"
-                />
+            <div class="flex items-center gap-4">
+                <div class="relative w-64">
+                    <input 
+                        type="text" 
+                        placeholder="Search stocks..."
+                        class="w-full bg-[#0F0F0F] border border-gray-700 rounded-lg px-4 py-2 text-gray-200
+                               focus:outline-none focus:ring-1 focus:ring-gray-500 placeholder-gray-500"
+                    />
+                </div>
             </div>
-
-            <select 
-                class="bg-[#0F0F0F] border border-gray-700 rounded-lg px-3 py-2 text-gray-200
-                       focus:outline-none focus:ring-1 focus:ring-gray-500 cursor-pointer"
-            >
-                <option value="US">🇺🇸 US</option>
-                <option value="UK">🇬🇧 UK</option>
-                <option value="RU">🇷🇺 Russia</option>
-                <option value="JP">🇯🇵 Japan</option>
-                <option value="DE">🇩🇪 Germany</option>
-                <option value="EG">🇪🇬 Egypt</option>
-                <option value="AE">🇦🇪 UAE</option>
-            </select>
-
         </div>
-    </div>
-</nav>
-
-
+    </nav>
 
     <main class="flex-1 container mx-auto px-6 py-6">
         @RenderBody()
