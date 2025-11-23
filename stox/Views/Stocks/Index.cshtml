@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Top Stocks";
+}
+
+<div class="max-w-7xl mx-auto mt-10">
+
+    <h1 class="text-2xl font-semibold text-white mb-5">Top Stocks</h1>
+
+    <div class="overflow-hidden rounded-xl border border-gray-700 bg-[#1b1c1f] shadow-lg">
+
+        <!-- Header -->
+        <div class="grid grid-cols-12 px-4 py-3 bg-[#232427] text-gray-300 text-sm font-semibold border-b border-gray-700">
+            <div class="col-span-2">Symbol</div>
+            <div class="col-span-2">Market cap</div>
+            <div class="col-span-1">Price</div>
+            <div class="col-span-1">Change %</div>
+            <div class="col-span-2">Volume</div>
+            <div class="col-span-1">P/E</div>
+            <div class="col-span-1">EPS</div>
+            <div class="col-span-2">Sector</div>
+        </div>
+
+        <!-- Rows -->
+        @foreach (var item in new[]{
+            new { Sym="NVDA", Name="NVIDIA Corporation", Mc="4.35 T USD", Price="178.88 USD", Ch="-0.97%", ChCol="text-red-400", Vol="346.92 M", PE="44.31", EPS="4.04", Sec="Electronic tech" },
+            new { Sym="AAPL", Name="Apple Inc.", Mc="4.01 T USD", Price="271.49 USD", Ch="+1.97%", ChCol="text-green-400", Vol="59.03 M", PE="36.40", EPS="7.46", Sec="Electronic tech" },
+            new { Sym="GOOG", Name="Alphabet Inc.", Mc="3.62 T USD", Price="299.65 USD", Ch="+3.33%", ChCol="text-green-400", Vol="43.67 M", PE="29.56", EPS="10.14", Sec="Tech services" }
+        })
+        {
+            <div class="grid grid-cols-12 px-4 py-4 border-b border-gray-800 hover:bg-[#2a2b2e] transition ease-in-out">
+                
+                <!-- Symbol + Name -->
+                <div class="col-span-2 flex items-center space-x-2">
+                    <img src="~/images/logo.png" class="h-6 w-6 rounded-full shadow" />
+                    <div>
+                        <div class="font-semibold text-white">@item.Sym</div>
+                        <div class="text-gray-400 text-xs">@item.Name</div>
+                    </div>
+                </div>
+
+                <div class="col-span-2 text-gray-200">@item.Mc</div>
+                <div class="col-span-1 text-gray-200">@item.Price</div>
+                <div class="col-span-1 font-medium @item.ChCol">@item.Ch</div>
+                <div class="col-span-2 text-gray-300">@item.Vol</div>
+                <div class="col-span-1 text-gray-300">@item.PE</div>
+                <div class="col-span-1 text-gray-300">@item.EPS</div>
+                <div class="col-span-2 text-gray-300">@item.Sec</div>
+            </div>
+        }
+    </div>
+</div>
