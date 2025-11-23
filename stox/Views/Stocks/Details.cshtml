@@ -1,0 +1,41 @@
+@model StockProfile
+
+<div class="max-w-4xl mx-auto bg-[#1F1F1F] rounded-2xl shadow-xl overflow-hidden">
+    <div class="flex flex-col md:flex-row items-center md:items-start p-6 gap-6">
+        
+        <div class="flex-shrink-0">
+            @if (!string.IsNullOrEmpty(Model.Logo))
+            {
+                <img src="@Model.Logo" alt="@Model.Name Logo" class="h-24 w-24 rounded-lg shadow-md"/>
+            }
+            else
+            {
+                <div class="h-24 w-24 bg-gray-700 flex items-center justify-center rounded-lg text-gray-400">
+                    No Logo
+                </div>
+            }
+        </div>
+
+        <!-- Details -->
+        <div class="flex-1 space-y-2">
+            <h1 class="text-3xl font-bold text-white">@Model.Name (@Model.Ticker)</h1>
+            <p class="text-gray-300">@Model.FinnhubIndustry</p>
+
+            <div class="grid grid-cols-2 gap-4 mt-4 text-gray-200">
+                <div><span class="font-semibold">Country:</span> @Model.Country</div>
+                <div><span class="font-semibold">Exchange:</span> @Model.Exchange</div>
+                <div><span class="font-semibold">Currency:</span> @Model.Currency</div>
+                <div><span class="font-semibold">IPO Date:</span> @Model.Ipo</div>
+                <div><span class="font-semibold">Market Cap:</span> @Model.MarketCapitalization?.ToString("C0")</div>
+                <div><span class="font-semibold">Shares Outstanding:</span> @Model.ShareOutstanding?.ToString("N0")</div>
+                <div><span class="font-semibold">Phone:</span> @Model.Phone</div>
+                <div><span class="font-semibold">Website:</span> 
+                    @if (!string.IsNullOrEmpty(Model.Weburl))
+                    {
+                        <a href="@Model.Weburl" target="_blank" class="text-blue-400 hover:underline">@Model.Weburl</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

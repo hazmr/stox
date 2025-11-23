@@ -1,0 +1,29 @@
+@model List<Stock>
+
+<div class="overflow-x-auto bg-[#0F0F0F] rounded-xl shadow-md">
+    <table class="min-w-full divide-y divide-gray-700">
+        <thead class="bg-[#1F1F1F]">
+        <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Symbol</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Description</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Type</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Currency</th>
+        </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-700">
+        @foreach (var stock in Model)
+        {
+            <tr class="hover:bg-[#1A1A1A] transition-colors duration-200">
+                <td class="px-6 py-4 font-semibold">
+                    <a href="/stocks/@stock.Symbol" class="text-blue-400 hover:underline">
+                        @stock.Symbol
+                    </a>
+                </td>
+                <td class="px-6 py-4">@stock.Description</td>
+                <td class="px-6 py-4">@stock.Type</td>
+                <td class="px-6 py-4">@stock.Currency</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
