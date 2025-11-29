@@ -1,16 +1,9 @@
-# Build Folders
 bin/
 obj/
-
-# Rider
 .idea/
 *.sln
 *.iml
-
-# Visual Studio
 .vs/
-
-# Build Artifacts
 *.dll
 *.exe
 *.pdb
@@ -18,18 +11,21 @@ obj/
 *.apk
 *.ipa
 *.msix
-
-# NuGet Packages
 *.nupkg
-
-# Logs
 *.log
-
-# Temporary Files
+logs/
+npm-debug.log*
 *.tmp
 *.temp
-
-# User-specific files
+pids/
+*.pid
+*.seed
+*.pid.lock
+node_modules/
+.npm
+.env
+.DS_Store
+Thumbs.db
 *.user
 *.suo
 *.userprefs
